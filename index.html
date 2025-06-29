@@ -1,6 +1,39 @@
 <html>
-  <head><title>My First Project</title></head>
+  <head>
+    <title>My First Project</title>
+    <style>
+      .clock {
+        font-family: 'Arial', sans-serif;
+        font-size: 2em;
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+        margin: 20px 0;
+        padding: 10px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      }
+    </style>
+  </head>
   <body>
     <h1>Hello from GitHub 👋 Celtics world champions 4 life</h1>
+    
+    <div class="clock" id="clock"></div>
+    
+    <script>
+      function updateClock() {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString();
+        document.getElementById('clock').textContent = timeString;
+      }
+      
+      // Update clock immediately
+      updateClock();
+      
+      // Update clock every second
+      setInterval(updateClock, 1000);
+    </script>
   </body>
 </html>
